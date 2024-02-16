@@ -11,8 +11,8 @@ export default function AllProfilesMain() {
 
   const getBackgroundImage = () => {
     return isDarkMode
-      ? require('/Users/ikrammtimet555gmail.com/MEDTECH/Cources/SE-junior/term2/Mobile/Dating App/LAB2/DatingApp/assets/bg-dark.jpg')
-      : require('/Users/ikrammtimet555gmail.com/MEDTECH/Cources/SE-junior/term2/Mobile/Dating App/LAB2/DatingApp/assets/bg-light.jpg');
+      ? require('../../assets/bg-dark.jpg')
+      : require('../../assets/bg-light.jpg');
   };
 
   return (
@@ -23,11 +23,11 @@ export default function AllProfilesMain() {
       <View style={styles.container}>
         <Header isDarkMode={isDarkMode} onToggleDarkMode={setIsDarkMode} />
         <View>
-          <Text style={[styles.title, { color: isDarkMode ? "white" : "black" }]}>
-            All Profiles Ready to Start!
+          <Text style={[styles.title, { color: isDarkMode ? "lightblue" : "purple" }]}>
+            All profiles are ready to start!
           </Text>
-          <Text style={[styles.title, { color: isDarkMode ? "pink" : "purple" }]}>
-            colorScheme: {isDarkMode ? "dark" : "light"}
+          <Text style={[styles.title, { color: isDarkMode ? "pink" : "black" }]}>
+          colorScheme: {isDarkMode ? "Dark" : "Light"}
           </Text>
         </View>
         <ListProfiles />
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    alignItems: "center",
+    textAlign: "center",
     marginTop: 10,
     fontSize: 18,
   },

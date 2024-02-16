@@ -9,10 +9,10 @@ export default function Header({ isDarkMode, onToggleDarkMode }) {
   return (
     <View style={styles.container}>
       <View style={styles.headerContent}>
-        <Text style={styles.headerText}>Welcome Back</Text>
+        <Text style={styles.headerText}>Welcome Back!</Text>
         <Switch
-          trackColor={{ false: '#767577', true: '#FEE2F8' }}
-          thumbColor={isDarkMode ? 'black' : '#f4f3f4'}
+          trackColor={{ false: 'purple', true: 'lightblue' }}
+          thumbColor={isDarkMode ? 'black' : 'white'}
           value={isDarkMode}
           onValueChange={toggleDarkMode}
           style={styles.switch}
@@ -29,15 +29,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: 500,
     height: 80,
+    
   },
   headerContent: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginTop:"2%"
+    
   },
   headerText: {
     fontSize: 30,
-    color: 'black',
+    color: 'black'
   },
   switch: {
     marginLeft: 50,
