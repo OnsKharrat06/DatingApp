@@ -8,6 +8,8 @@ import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { DefaultTheme, DarkTheme } from "@react-navigation/native";
+import DrawNavigation from "./components/Nav/DrawNavigation";
+import SignIn from "./components/SignIn/SignIn";
 
 
 const Stack = createNativeStackNavigator();
@@ -21,12 +23,13 @@ export default function App() {
 
     <NavigationContainer>
       <View style={styles.container}>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen
-            name="AllProfilesMain"
-            component={AllProfilesMain}
-          ></Stack.Screen>
-        </Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{ headerShown: true }}
+        initialRouteName="SignIn"
+      >
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="DrawNavigation" component={DrawNavigation} />
+      </Stack.Navigator>
       </View>
     </NavigationContainer>
 

@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, ImageBackground, StyleSheet, useColorScheme } from "react-native";
+import {
+  View,
+  Text,
+  ImageBackground,
+  StyleSheet,
+  useColorScheme,
+  Switch,
+} from "react-native";
 import Header from "../header-footer/Header";
 import Footer from "../header-footer/Footer";
 import ListProfiles from "./ListProfiles";
@@ -11,8 +18,8 @@ export default function AllProfilesMain() {
 
   const getBackgroundImage = () => {
     return isDarkMode
-      ? require('../../assets/bg-dark.jpg')
-      : require('../../assets/bg-light.jpg');
+      ? require("../../assets/bg-dark.jpg")
+      : require("../../assets/bg-light.jpg");
   };
 
   return (
@@ -21,19 +28,31 @@ export default function AllProfilesMain() {
       style={styles.backgroundImage}
     >
       <View style={styles.container}>
-        <Header isDarkMode={isDarkMode} onToggleDarkMode={setIsDarkMode} />
         <View>
-          <Text style={[styles.title, { color: isDarkMode ? "lightblue" : "purple" }]}>
-            All profiles are ready to start!
+          <Text
+            style={[
+              styles.title,
+              { marginTop: 10,color: isDarkMode ? "lightblue" : "purple" },
+            ]}
+          >
+            All profiles are ready to start! 
+            
           </Text>
-          <Text style={[styles.title, { color: isDarkMode ? "pink" : "black" }]}>
-          colorScheme: {isDarkMode ? "Dark" : "Light"}
+          <Switch
+            trackColor={{ false: "purple", true: "lightblue" }}
+            thumbColor={isDarkMode ? "black" : "white"}
+            value={isDarkMode}
+            onValueChange={setIsDarkMode}
+            style={styles.switch}
+          />
+          
+          <Text
+            style={[styles.title, { color: isDarkMode ? "pink" : "black" }]}
+          >
+            colorScheme: {isDarkMode ? "Dark" : "Light"}
           </Text>
         </View>
         <ListProfiles />
-      </View>
-      <View>
-        <Footer />
       </View>
     </ImageBackground>
   );
@@ -42,8 +61,8 @@ export default function AllProfilesMain() {
 const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
+    resizeMode: "cover",
+    justifyContent: "center",
   },
   container: {
     flex: 1,
@@ -51,8 +70,7 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: "center",
-    marginTop: 10,
-    fontSize: 18,
+    fontSize: 18
   },
   LightTheme: {
     ...DefaultTheme,
@@ -71,5 +89,9 @@ const styles = StyleSheet.create({
       text: "white",
       background: "black",
     },
+  },
+  switch:{
+    margin:2,
+    alignSelf:"center",
   },
 });

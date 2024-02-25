@@ -2,6 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import ListProfiles from "../all-profiles/ListProfiles";
+import AllProfilesMain from "../all-profiles/AllProfilesMain";
 import Form from "../Form";
 import ListUsers from "../top-10/ListUsers";
 
@@ -27,13 +28,13 @@ export default function TabNavigation() {
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "tomato",
-        tabBarInactiveTintColor: "gray",
+        tabBarActiveTintColor: "pink",
+        tabBarInactiveTintColor: "black",
       })}
     >
       <Tab.Screen
         name="All Profiles"
-        component={ListProfiles}
+        component={AllProfilesMain}
         options={{
           headerShown: false,
           // headerTitle: "All Profiles Ready to Start!",

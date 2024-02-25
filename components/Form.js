@@ -17,7 +17,7 @@ export default function Form() {
     // console.log(userInfo);
     return (
         <View style={styles.container}>
-            <Header />
+            
             <View style={styles.textContainer}>
                 <Text style={styles.title}> Update Your Profile Infos</Text>
             </View>
@@ -107,7 +107,7 @@ export default function Form() {
                     />
                 </ScrollView>
             </View>
-            <Footer />
+            
         </View>
     );
 }
