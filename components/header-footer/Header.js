@@ -8,7 +8,7 @@ export default function Header({ isDarkMode, onToggleDarkMode }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headerContent}>
+      <View style={[styles.headerContent, styles.container]}>
         <Text style={styles.headerText}>Welcome Back!</Text>
         <Switch
           trackColor={{ false: 'purple', true: 'lightblue' }}
